@@ -69,10 +69,11 @@ module.exports = {
             },
         ],
         '@typescript-eslint/explicit-module-boundary-types': ERROR,
-        '@typescript-eslint/no-unused-vars': ERROR,
+        '@typescript-eslint/no-unused-vars': OFF, // duplicated by ts(6133)
         '@typescript-eslint/no-use-before-define': ERROR,
         '@typescript-eslint/unbound-method': ERROR,
         '@typescript-eslint/require-await': OFF, // Fastify requires async functions everywhere?
+        '@typescript-eslint/ban-ts-comment': OFF,
 
         'jest/no-commented-out-tests': ERROR,
     },
