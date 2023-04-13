@@ -39,7 +39,7 @@ export const config: {
     port: number;
     // postgres: DatabaseConfig;
 } = {
-    env: process.env.NODE_ENV as string, // Joi sets defaults
+    env: process.env.NODE_ENV ?? 'production',
     port: parseInt(process.env.PORT ?? '8080', 10),
     // postgres: {
     //     database: databaseConfig.database,
