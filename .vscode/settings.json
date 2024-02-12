@@ -20,7 +20,9 @@
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "eslint.validate": ["javascript", "typescript"],
-    "editor.codeActionsOnSave": { "source.fixAll.eslint": false },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "never"
+    },
 
     "workbench.iconTheme": "vscode-icons",
     "cSpell.ignorePaths": ["node_modules", ".git"],
