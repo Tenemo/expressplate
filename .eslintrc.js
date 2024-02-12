@@ -14,7 +14,7 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:security/recommended-legacy',
     ],
-    plugins: ['@typescript-eslint', 'import', 'prettier', 'jest'],
+    plugins: ['@typescript-eslint', 'import', 'prettier', 'jest', 'only-error'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: './tsconfig.json',
