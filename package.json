@@ -3,7 +3,7 @@
     "version": "1.1.0",
     "description": "Express.js REST API opinionated boilerplate",
     "author": "piotr@piech.dev",
-    "license": "UNLICENSED",
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Tenemo/expressplate.git"
