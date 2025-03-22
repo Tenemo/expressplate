@@ -2,8 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./src/",
         "target": "esnext",
-        "module": "commonjs",
-        "esModuleInterop": true,
+        "module": "esnext",
         "moduleResolution": "node",
         "removeComments": true,
         "declaration": false,
@@ -14,14 +13,12 @@
         "sourceMap": true,
         "allowJs": true,
         "noEmit": true,
+        "esModuleInterop": true,
         "isolatedModules": true,
         "skipLibCheck": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
         "noErrorTruncation": true
     },
-    "ts-node": {
-        "require": ["tsconfig-paths/register"]
-    },
-    "include": ["src/**/*", "config/**/*", ".eslintrc.js", "temp/**/*"]
+    "include": ["src/**/*", "config/**/*", "eslint.config.js", "temp/**/*"]
 }

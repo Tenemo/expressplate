@@ -43,7 +43,7 @@ app.use('/api', router);
 app.use(errorLogger);
 
 console.log = (message: string) =>
-    logger.log({
+       logger.log({
         level: 'info',
         message,
     });
