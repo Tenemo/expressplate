@@ -1,10 +1,10 @@
 import { Express, ErrorRequestHandler } from 'express';
+import expressWinston from 'express-winston';
+import morgan, { StreamOptions } from 'morgan';
 import winston, { Logger } from 'winston';
 // import * as Sentry from '@sentry/node';
 // import * as Tracing from '@sentry/tracing';
-import expressWinston from 'express-winston';
 import DailyRotateFile from 'winston-daily-rotate-file';
-import morgan, { StreamOptions } from 'morgan';
 
 // TODO: don't disable this rule
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
@@ -14,7 +14,8 @@ const winstonFormat = winston.format.combine(
     winston.format.splat(),
     winston.format.printf(({ timestamp, level, message, stack }) => {
         return stack
-            ? `${timestamp} [${level}] ${message}\n${stack}`
+            ? // eslint-disable-next-line @typescript-eslint/no-base-to-string
+              `${timestamp} [${level}] ${message}\n${stack}`
             : `${timestamp} [${level}] ${message}`;
     }),
 );

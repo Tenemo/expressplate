@@ -3,7 +3,9 @@
         "baseUrl": "./src/",
         "target": "esnext",
         "module": "esnext",
+        "esModuleInterop": true,
         "moduleResolution": "node",
+        "allowArbitraryExtensions": true,
         "removeComments": true,
         "declaration": false,
         "allowSyntheticDefaultImports": true,
@@ -13,12 +15,16 @@
         "sourceMap": true,
         "allowJs": true,
         "noEmit": true,
-        "esModuleInterop": true,
         "isolatedModules": true,
         "skipLibCheck": true,
         "noUnusedParameters": true,
-        "noUnusedLocals": true,
-        "noErrorTruncation": true
+        "noUnusedLocals": true
     },
-    "include": ["src/**/*", "config/**/*", "eslint.config.js", "temp/**/*"]
+    "include": [
+        "src/**/*",
+        "config/**/*",
+        "eslint.config.js",
+        "temp/**/*",
+        "vitest.config.ts"
+    ]
 }

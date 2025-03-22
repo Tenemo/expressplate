@@ -1,10 +1,12 @@
-import express from 'express'; // ErrorRequestHandler
 // import {ErrorRequestHandler } from 'express';
 import cookieParser from 'cookie-parser';
-import { router } from 'routes/router';
-import { config } from './config';
 import cors from 'cors';
+import express from 'express'; // ErrorRequestHandler
+
+import { config } from './config';
 import { setupLogging } from './logging';
+
+import { router } from 'routes/router';
 
 export const app = express();
 
@@ -43,7 +45,7 @@ app.use('/api', router);
 app.use(errorLogger);
 
 console.log = (message: string) =>
-       logger.log({
+    logger.log({
         level: 'info',
         message,
     });
@@ -60,6 +62,6 @@ console.error = (message: string) =>
 
 export const server = app.listen(config.port, () => {
     console.log(
-        `Server running on port ${config.port} in ${config.env} environment`,
+        `Server running on port ${config.port.toString()} in ${config.env} environment`,
     );
 });

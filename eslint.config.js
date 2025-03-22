@@ -23,32 +23,14 @@ export default tseslint.config(
     prettierPluginRecommended,
     securityPlugin.configs.recommended,
     {
-        files: ['**/*.{js,mjs,cjs,ts}'], 
+        files: ['**/*.{js,mjs,cjs,ts}'],
         plugins: {
             'only-error': errorOnlyPlugin,
             prettier: prettierPlugin,
             security: securityPlugin,
             'unused-imports': unusedImportsPlugin,
         },
-    },
-    {
-        files: [
-            '**/*.spec.js',
-            '**/*.test.js',
-            '**/*.spec.ts',
-            '**/*.test.ts',
-        ],
-        plugins: {
-            vitest: vitestPlugin,
-        },
-        rules: {
-            ...vitestPlugin.configs.recommended.rules,
-            'vitest/max-nested-describe': ['error', { max: 3 }],
-        },
         settings: {
-            react: {
-                version: 'detect',
-            },
             'import/resolver': {
                 typescript: {}, // eslint-import-resolver-typescript
             },
@@ -62,7 +44,6 @@ export default tseslint.config(
                 tsconfigRootDir: import.meta.dirname,
             },
             globals: {
-                ...globals.browser,
                 ...globals.node,
                 ...globals.es2021,
                 ...globals.commonjs,
@@ -135,17 +116,38 @@ export default tseslint.config(
                 },
             ],
         },
-    
+    },
+    {
+        files: ['**/*.{js,mjs,cjs}'],
+        rules: {
+            '@typescript-eslint/no-unsafe-assignment': OFF,
+            '@typescript-eslint/no-unsafe-member-access': OFF,
+            '@typescript-eslint/no-unsafe-argument': OFF,
+        },
+    },
+    {
+        files: [
+            '**/*.spec.tsx',
+            '**/*.spec.js',
+            '**/*.test.tsx',
+            '**/*.test.js',
+        ],
+        plugins: {
+            vitest: vitestPlugin,
+        },
+        rules: {
+            ...vitestPlugin.configs.recommended.rules,
+            'vitest/max-nested-describe': ['error', { max: 3 }],
+        },
     },
     {
         ignores: [
             'node_modules/*',
             'dist/*',
-            'logs/*'
-            'coverage/*',
-            '.babelrc.js',
+            'logs/*',
             '.tmp/*',
+            'coverage/*',
             '**/*.html',
         ],
     },
-)
+);
