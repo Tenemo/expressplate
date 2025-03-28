@@ -4,7 +4,6 @@ An Express.js REST API opinionated boilerplate designed for building scalable an
 
 - Strict ESLint TypeScript linting and automatic formatting with zero additional configuration needed.
 - VS Code settings bundled with the boilerplate, including recommended extensions for automatic formatting - via a one-click install.
-- Deployed to [Netlify](https://netlify.com) with an example catch-all redirect to always utilize react-router: [reactplate.com](https://reactplate.com)
 
 ## Features
 
