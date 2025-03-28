@@ -1,18 +1,44 @@
 # expressplate
 
-Express.js REST API opinionated boilerplate designed for building scalable and maintainable web applications. This project includes a pre-configured environment with TypeScript, Express.js, and various tools to ensure code quality and consistency.
+An Express.js REST API opinionated boilerplate designed for building scalable and maintainable web applications. Pre-configured environment with TypeScript, Express.js, and great VS Code integration.
+
+- Strict ESLint TypeScript linting and automatic formatting with zero additional configuration needed.
+- VS Code settings bundled with the boilerplate, including recommended extensions for automatic formatting - via a one-click install.
+- Deployed to [Netlify](https://netlify.com) with an example catch-all redirect to always utilize react-router: [reactplate.com](https://reactplate.com)
 
 ## Features
 
--   **TypeScript**
--   **Express.js**
--   **Babel**: Babel can convert TypeScript code into a backward compatible version of JavaScript in current and older environments.
--   **ESLint & Prettier**
--   **Husky**
--   **Jest**
--   **Winston & Morgan**: Robust logging
+### Core technologies
 
-## Installation
+- TypeScript with strict typing rules
+- Express.js REST API setup
+- Environment variable validation and configuration
+
+### Logging
+
+- Winston & Morgan for robust logging
+- Log rotation with daily files
+- Separate error logs
+- Console logging overrides for consistent formatting
+
+### Code quality
+
+- ESLint v9 with strict configuration:
+    - typescript-eslint for full TypeScript integration
+    - Prettier plugin for formatting
+    - Import & unused imports detection
+    - Security plugin
+    - Vitest support
+- VS Code settings, including ESLint set up as a formatter with Prettier integration - **formatting & quick fixes in one pass**!
+- Prettier integrated with ESLint
+- Husky pre-commit hooks
+- .editorconfig for consistent code style across different editors
+
+### Testing
+
+- Vitest testing framework
+
+## Getting started
 
 To get started with `expressplate`, clone the repository and install dependencies:
 
@@ -22,19 +48,23 @@ cd expressplate
 npm install
 ```
 
-## Configuration
+### Configuration
 
-Adjust the `.env` file in the root directory to match your environment variables. A `.env.sample` file is provided as an example.
+    ```bash
+    cp .env.sample .env
+    ```
 
-## Development
+Create the .env file in the root directory and adjust the variables as needed.
 
-To start the development server with hot reload:
+### Development
+
+To start the development server with nodemon:
 
 ```bash
-npm run dev:ts
+npm run dev
 ```
 
-## Build
+### Build
 
 To compile TypeScript to JavaScript and build the project for production:
 
@@ -42,23 +72,7 @@ To compile TypeScript to JavaScript and build the project for production:
 npm run build
 ```
 
-## Running Tests
-
-To run tests using Jest:
-
-```bash
-npm test
-```
-
-## Code Quality
-
-Lint your code and fix formatting issues:
-
-```bash
-npm run eslint:fix
-```
-
-## Deployment
+### Deployment
 
 Deploy the built application by starting the server with:
 
@@ -68,14 +82,33 @@ npm start
 
 This will run the compiled JavaScript code from the `dist` directory.
 
+### Running tests
+
+To run tests using Vitest:
+
+```bash
+npm test
+```
+
+### Code quality
+
+Lint your code and fix formatting issues:
+
+```bash
+npm run lint:fix
+```
+
+## API Routes
+
+- `GET /api/health-check` - Check service health
+
 ## Logging
 
-Logs are configured to rotate daily with separate files for combined logs and error logs. Check the `logs` directory.
+Logs are configured to rotate daily with separate files for combined logs and error logs. Check the `logs` directory for:
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements.
+- `combined-[DATE].log` - All logs including HTTP requests
+- `error-[DATE].log` - Error logs only
 
 ## License
 
-This project is under MIT license. The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). It is simple and easy to understand and it places almost no restrictions on what you can do with this project.
+This project is licensed under the MIT License.

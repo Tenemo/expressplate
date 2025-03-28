@@ -1,7 +1,7 @@
 {
     "name": "expressplate",
     "version": "1.1.0",
-    "description": "Express.js REST API opinionated boilerplate",
+    "description": "An Express.js REST API opinionated boilerplate designed for building scalable and maintainable web applications. Pre-configured environment with TypeScript, Express.js, and great VS Code integration.",
     "author": "piotr@piech.dev",
     "license": "MIT",
     "repository": {
@@ -23,6 +23,7 @@
         "prebuild": "npm run lint && npm run tsc && del-cli dist",
         "build": "tsc --project tsconfig.build.json",
         "build:skip": "del-cli dist && tsc --project tsconfig.build.json",
+        "dev": "nodemon",
         "lint": "eslint . --ext js,ts",
         "lint:fix": "eslint . --ext js,ts --fix",
         "tsc": "tsc",
