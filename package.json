@@ -21,7 +21,7 @@
         "start:dev": "cross-env NODE_ENV=development tsx src/server.ts",
         "start:prod": "cross-env NODE_ENV=production PORT=80 node dist/server",
         "prebuild": "npm run lint && npm run tsc && del-cli dist",
-        "build": "tsc --project tsconfig.build.json",
+        "build": "tsc --project tsconfig.build.json && tsc-alias -p tsconfig.build.json && babel dist --out-dir dist --extensions .js",
         "build:skip": "del-cli dist && tsc --project tsconfig.build.json",
         "dev": "nodemon",
         "lint": "eslint . --ext js,ts",
@@ -70,6 +70,7 @@
         "@typescript-eslint/parser": "^8.30.1",
         "@vitest/eslint-plugin": "^1.1.42",
         "babel-jest": "^29.7.0",
+        "babel-plugin-add-import-extension": "^1.6.0",
         "babel-plugin-module-resolver": "^5.0.2",
         "core-js": "^3.41.0",
         "del-cli": "^6.0.0",
@@ -89,11 +90,11 @@
         "prettier": "^3.5.3",
         "prettier-eslint": "^16.3.2",
         "ts-patch": "^3.3.0",
+        "tsc-alias": "^1.8.16",
         "tsconfig-paths": "^4.2.0",
         "tsx": "^4.19.3",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.30.1",
-        "typescript-transformer-esm": "^1.1.0",
         "vitest": "^3.1.1"
     }
 }
