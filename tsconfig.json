@@ -1,6 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": "./src/",
+        "paths": {
+            "routes/*": [
+                "routes/*"
+            ]
+        },
         "target": "esnext",
         "module": "esnext",
         "esModuleInterop": true,
@@ -21,7 +26,9 @@
         "noUnusedLocals": true
     },
     "ts-node": {
-        "require": ["tsconfig-paths/register"]
+        "require": [
+            "tsconfig-paths/register"
+        ]
     },
     "include": [
         "src/**/*",

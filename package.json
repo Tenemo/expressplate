@@ -20,7 +20,7 @@
         "start": "node dist/server",
         "start:dev": "cross-env NODE_ENV=development tsx src/server.ts",
         "start:prod": "cross-env NODE_ENV=production PORT=80 node dist/server",
-        "prebuild": "npm run lint && npm run tsc && del-cli dist",
+        "prebuild": "npm run lint && del-cli dist",
         "build": "tsc --project tsconfig.build.json",
         "build:skip": "del-cli dist && tsc --project tsconfig.build.json",
         "dev": "nodemon",
@@ -93,6 +93,7 @@
         "tsx": "^4.19.3",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.30.1",
+        "typescript-transform-paths": "^3.5.5",
         "typescript-transformer-esm": "^1.1.0",
         "vitest": "^3.1.1"
     }
